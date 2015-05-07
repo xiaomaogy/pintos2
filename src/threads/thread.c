@@ -356,10 +356,12 @@ thread_set_priority (int new_priority)
   /* Always update base priority. */
   t->base_priority = new_priority;
 
+
   /* Only update priority and test preemption if new priority
      is smaller and current priority is not donated by another
      thread. */
-  if (new_priority < old_priority && list_empty (&t->locks))
+     // printf("thread is hold some lock?:%d",(int)list_empty(&t->locks));
+  if (new_priority < old_priority && !list_empty (&t->locks))
     {
       t->priority = new_priority;
       // printf("Just set the t's priority to:%d\n",t->priority);
