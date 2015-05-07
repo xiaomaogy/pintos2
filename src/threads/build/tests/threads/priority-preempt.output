@@ -11,11 +11,17 @@ Initializing UHCI
 Boot complete.
 Executing 'priority-preempt':
 (priority-preempt) begin
+(priority-preempt) Thread high-priority iteration 0
+(priority-preempt) Thread high-priority iteration 1
+(priority-preempt) Thread high-priority iteration 2
+(priority-preempt) Thread high-priority iteration 3
+(priority-preempt) Thread high-priority iteration 4
+(priority-preempt) Thread high-priority done!
 (priority-preempt) The high-priority thread should have already completed.
 (priority-preempt) end
 Execution of 'priority-preempt' complete.
-Timer: 45 ticks
-Thread: 0 idle ticks, 47 kernel ticks, 0 user ticks
-Console: 504 characters output
+Timer: 77 ticks
+Thread: 0 idle ticks, 79 kernel ticks, 0 user ticks
+Console: 810 characters output
 Keyboard: 0 keys pressed
 Powering off...

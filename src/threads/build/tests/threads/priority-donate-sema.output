@@ -11,11 +11,12 @@ Initializing UHCI
 Boot complete.
 Executing 'priority-donate-sema':
 (priority-donate-sema) begin
+(priority-donate-sema) Thread L acquired lock.
 (priority-donate-sema) Main thread finished.
 (priority-donate-sema) end
 Execution of 'priority-donate-sema' complete.
-Timer: 44 ticks
-Thread: 0 idle ticks, 47 kernel ticks, 0 user ticks
-Console: 494 characters output
+Timer: 49 ticks
+Thread: 0 idle ticks, 52 kernel ticks, 0 user ticks
+Console: 541 characters output
 Keyboard: 0 keys pressed
 Powering off...

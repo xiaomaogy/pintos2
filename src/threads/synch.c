@@ -245,6 +245,16 @@ lock_held_by_current_thread (const struct lock *lock)
 
   return lock->holder == thread_current ();
 }
+
+bool
+lock_priority_large (const struct list_elem *a,
+                     const struct list_elem *b,
+                     void *aux UNUSED)
+{
+  struct lock *la = list_entry (a, struct lock, elem);
+  struct lock *lb = list_entry (b, struct lock, elem);
+  return la->max_priority > lb->max_priority;
+}
 
 /* One semaphore in a list. */
 struct semaphore_elem 
@@ -335,4 +345,21 @@ cond_broadcast (struct condition *cond, struct lock *lock)
 
   while (!list_empty (&cond->waiters))
     cond_signal (cond, lock);
+}
+
+bool
+cond_sema_priority_large (const struct list_elem *a,
+                          const struct list_elem *b,
+                          void *aux UNUSED)
+{
+  struct thread *ta;
+  struct thread *tb;
+  struct semaphore_elem *sa = list_entry (a, struct semaphore_elem, elem);
+  struct semaphore_elem *sb = list_entry (b, struct semaphore_elem, elem);
+
+  ta = list_entry(list_front(&sa->semaphore.waiters),
+                  struct thread, elem);
+  tb = list_entry(list_front(&sb->semaphore.waiters),
+                  struct thread, elem);
+  return ta->priority > tb->priority;
 }

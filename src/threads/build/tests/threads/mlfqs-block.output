@@ -20,8 +20,8 @@ Executing 'mlfqs-block':
 (mlfqs-block) Block thread should have already acquired lock.
 (mlfqs-block) end
 Execution of 'mlfqs-block' complete.
-Timer: 3062 ticks
-Thread: 0 idle ticks, 3065 kernel ticks, 0 user ticks
-Console: 784 characters output
+Timer: 3063 ticks
+Thread: 491 idle ticks, 2575 kernel ticks, 0 user ticks
+Console: 786 characters output
 Keyboard: 0 keys pressed
 Powering off...
